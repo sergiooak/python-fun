@@ -19,10 +19,12 @@ def main():
         curdate = get_date_string(day)
         for commit in range(1):
             rand = str(randint(0, 1000000))
-            string = "echo {} > gitHack/{}.txt".format(curdate, rand)
-            string = "git add gitHack/{}.txt; git commit --date='{}' -m 'update'".format(rand, curdate, curdate, curdate)
-            string = "git push"
-            subprocess.call(string, shell=True)
+            string1 = "echo {} > gitHack/{}.txt".format(curdate, rand)
+            subprocess.call(string1, shell=True)
+            string2 = "git add gitHack/{}.txt; git commit --date='{}' -m 'update'".format(rand, curdate, curdate, curdate)
+            subprocess.call(string2, shell=True)
+            string3 = "git push"
+            subprocess.call(string3, shell=True)
 
 
 if __name__ == "__main__":
