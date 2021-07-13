@@ -19,7 +19,7 @@ def main():
         curdate = get_date_string(day)
         for commit in range(1):
             rand = str(randint(0, 1000000))
-            git = "git filter-branch --env-filter 'export GIT_AUTHOR_DATE=\"{}\"'".format(curdate)
+            git = "git filter-branch --env-filter 'export GIT_AUTHOR_DATE=\"{}\"' -f".format(curdate)
             subprocess.call(git, shell=True)
             string = "echo {} > gitHack/{}.txt; git add gitHack/{}.txt; git commit -m 'update'; git push;".format(curdate, rand, rand)
             subprocess.call(string, shell=True)
